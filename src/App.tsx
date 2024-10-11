@@ -1,9 +1,10 @@
-function App() {
+import TaskContainer from "./components/taskContainer"
+
+export default function App() {
   return (
     <>
-     
+      <TaskContainer />
     </>
   )
 }
 
-export default App
