@@ -1,8 +1,9 @@
+import Header from "./header/Header"
 
 export default function taskContainer() {
   return (
     <main>
-      <p>Notre contenu...</p>
+      <Header />
     </main>
   )
 }
