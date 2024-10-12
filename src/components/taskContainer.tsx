@@ -19,11 +19,41 @@ export default function taskContainer() {
     setTaskList([...taskList, newTask])
   }
 
+  const editTask = (id: number, completedValue: boolean) => {
+    setTaskList(
+      taskList.map((task: TaskType) => {
+        if (task.id === id) {
+          return { ...task, completed: completedValue }
+        }
+        return task
+      })
+    )
+  }
+
+  const deleteTask = (id: number) => {
+    setTaskList(taskList.filter((task: TaskType) => task.id !== id))
+  }
+
+  const getTaskCounts = () => {
+    const completedTaskCount = taskList.filter((task: TaskType) => task.completed).length
+    const incompletedTaskCount = taskList.length - completedTaskCount
+    return { completedTaskCount, incompletedTaskCount }
+  }
+
+  const { completedTaskCount, incompletedTaskCount } = getTaskCounts();
+
+  console.log(completedTaskCount, incompletedTaskCount)
+
   return (
     <main>
       <Header />
       <TaskInput addTask={addTask} />
-      <TaskList />
+      <TaskList 
+        taskList={taskList} 
+        editTask={editTask} 
+        deleteTask={deleteTask}
+        incompletedTaskCount={incompletedTaskCount}
+      />
       <Footer />
     </main>
   )
