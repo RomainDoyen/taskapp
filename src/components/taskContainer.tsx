@@ -12,7 +12,7 @@ export default function taskContainer() {
 
   const addTask = (title: string) => {
     const newTask = {
-      id: taskList.length + 1,
+      id: taskList.length ? taskList[taskList.length - 1].id + 1 : 1,
       title: title,
       completed: false,
     }
