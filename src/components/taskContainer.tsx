@@ -42,7 +42,7 @@ export default function taskContainer() {
 
   const { completedTaskCount, incompletedTaskCount } = getTaskCounts();
 
-  console.log(completedTaskCount, incompletedTaskCount)
+  // console.log(completedTaskCount, incompletedTaskCount)
 
   return (
     <main>
