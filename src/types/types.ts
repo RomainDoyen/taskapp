@@ -20,3 +20,7 @@ export type TaskItemProps = {
   editTask: (id: number, completedValue: boolean) => void
   deleteTask: (id: number) => void
 }
+
+export type FooterProps = {
+  completedTaskCount: number
+}

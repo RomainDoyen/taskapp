@@ -1,11 +1,17 @@
 import styles from './Footer.module.css'
+import { FooterProps } from '../../types/types'
 
-export default function footer() {
-  return (
-    <footer>
-      <code className={styles.footer}>
-        Tu as éliminé <span id="completed-count">0</span> tâches sur <span id="total-count">0</span> tâches
-      </code>
-    </footer>
-  )
+export default function footer({ completedTaskCount }: FooterProps) {
+
+  if (completedTaskCount) {
+    return (
+      <footer>
+        <code className={styles.footer}>
+          Tu as éliminé <span id="completed-count">{completedTaskCount}</span> tâche
+          {completedTaskCount > 1 ? "s" : ""} !
+        </code>
+      </footer>
+    )
+  }
+  return null;
 }

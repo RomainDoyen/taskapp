@@ -54,7 +54,7 @@ export default function taskContainer() {
         deleteTask={deleteTask}
         incompletedTaskCount={incompletedTaskCount}
       />
-      <Footer />
+      <Footer completedTaskCount={completedTaskCount} />
     </main>
   )
 }
