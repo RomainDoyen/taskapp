@@ -14,3 +14,9 @@ export type TaskListProps = {
   deleteTask: (id: number) => void
   incompletedTaskCount: number
 }
+
+export type TaskItemProps = {
+  task: TaskType
+  editTask: (id: number, completedValue: boolean) => void
+  deleteTask: (id: number) => void
+}
