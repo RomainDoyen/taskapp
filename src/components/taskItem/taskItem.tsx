@@ -1,14 +1,21 @@
+import { TaskType } from '../../types/types'
 import styles from './TaskItem.module.css'
 
-export default function taskItem() {
+type TaskItemProps = {
+  task: TaskType
+  editTask: (id: number, completedValue: boolean) => void
+  deleteTask: (id: number) => void
+}
+
+export default function taskItem({ task, editTask, deleteTask }: TaskItemProps) {
   return (
     <li className={`${styles.container} ${styles.default}`}>
       <div className={styles.item}>
         <div className={`${styles.id} ${styles.idDefault}`}>
-          numéro
+          {task.id}
         </div>
         <div className={styles.contentDefault}>
-          Titre
+          {task.title}
         </div>
       </div>
       <button className='button-primary'>
