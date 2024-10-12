@@ -1,6 +1,5 @@
-import { TaskType } from '../../types/types'
-import styles from './TaskItem.module.css'
 import { TaskItemProps } from '../../types/types'
+import styles from './TaskItem.module.css'
 
 export default function taskItem({ task, editTask, deleteTask }: TaskItemProps) {
   return (
